@@ -31,25 +31,26 @@ public class ProgressBar2 {
         progressBar.setMinimum(0);
         progressBar.setStringPainted(true);
         progressBar.setMaximum(100);
-        
-        Thread t=new Thread(){
-            public void run(){
-                int i=0;
-                while(true){
+
+        Thread t = new Thread() {
+            public void run() {
+                int i = 0;
+                while (true) {
                     //累加 i 的值，顯示在 progressBar，注意超過100要拉回來
-                    
+                    progressBar.setValue(i);
+                    i = (i + 1) % 100;
                     ////////////////////////////////////////////////
                     try {
                         Thread.sleep(100);
                     } catch (InterruptedException ex) {
-                        Logger.getLogger(ProgressBar2.class.getName()).log(Level.SEVERE, null, ex);
+                        //Logger.getLogger(ProgressBar2.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
             }
         };
-        t.setDaemon(true);
+        //t.setDaemon(true);
         t.start();
-        
+
         frame.add(progressBar);
         frame.setVisible(true);
     }

@@ -28,15 +28,20 @@ public class Slider1 {
         
         JSlider slider=new JSlider();
         //set min to 0
+        slider.setMinimum(0);
         //max to 100
+        slider.setMaximum(100);
         //value to 5
+        slider.setValue(5);
         //paintTicks to true
+        slider.setPaintTicks(true);
         //paintTracks to true
+        slider.setPaintTrack(true);
         //minorTickSpacing to 10
         //majorTickSpacing to 
         //
         //and then add the slider to frame
-        
+        frame.add(slider);
         //////////////////////////////////
         
         frame.setVisible(true);
