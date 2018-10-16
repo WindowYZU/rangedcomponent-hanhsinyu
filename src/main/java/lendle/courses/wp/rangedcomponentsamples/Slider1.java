@@ -38,6 +38,7 @@ public class Slider1 {
         //paintTracks to true
         slider.setPaintTrack(true);
         //minorTickSpacing to 10
+        slider.setMinorTickSpacing(10);
         //majorTickSpacing to 
         //
         //and then add the slider to frame
